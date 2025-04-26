@@ -1,0 +1,148 @@
+﻿@model List<Event>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminDefault/Index.cshtml";
+}
+
+<h1>Dashboard</h1>
+
+<div class="row">
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-primary bubble-shadow-small">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Öğretmen Sayısı</p>
+                            <h4 class="card-title">@ViewBag.v1</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-info bubble-shadow-small">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Etkinlik Sayısı</p>
+                            <h4 class="card-title">@ViewBag.v2</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-success bubble-shadow-small">
+                            <i class="fas fa-luggage-cart"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Hizmet Sayısı</p>
+                            <h4 class="card-title">@ViewBag.v3</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                            <i class="far fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Sınıf Sayısı</p>
+                            <h4 class="card-title">@ViewBag.v4</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-round">
+            <div class="card-header">
+                <div class="card-head-row card-tools-still-right">
+                    <h4 class="card-title">Etkinlikler</h4>
+                </div>
+                <p class="card-category">
+                    Bu grafik, etkinlik süresince yaşanan önemli anları ve katılımcı etkileşimlerini zaman çizelgesi üzerinde göstermektedir.
+                </p>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="table-responsive table-hover table-sales">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Resim</th>
+                                        <th scope="col">Etkinlik Adı</th>
+                                        <th scope="col">Tarih</th>
+                                        <th scope="col">Saat</th>
+                                        <th scope="col">Şehir</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="flag">
+                                                    <img src="@item.ImgUrl" style="height:75px; width:75px"
+                                                         alt="indonesia" />
+                                                </div>
+                                            </td>
+                                            <td>@item.EventName</td>
+                                            <td class="text-end">@item.Date</td>
+                                            <td class="text-end">@item.Time</td>
+                                            <td class="text-end">@item.City</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mapcontainer">
+                            <div id="world-map"
+                                 class="w-100"
+                                 style="height: 300px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

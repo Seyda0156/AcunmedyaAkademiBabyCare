@@ -1,0 +1,9 @@
+﻿@model List<AcunmedyaAkademiBabyCare.Entities.AboutList>
+<div class="row mb-4">
+    @foreach(var item in Model)
+    {
+        <div class="col-lg-6">
+            <h6 class="mb-3"><i class="fas fa-check-circle me-2">@item.Title</i></h6>
+        </div>
+    }
+</div>

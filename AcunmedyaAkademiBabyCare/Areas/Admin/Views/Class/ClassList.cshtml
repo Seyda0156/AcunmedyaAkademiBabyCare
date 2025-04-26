@@ -1,0 +1,73 @@
+﻿@model List<Class>
+@{
+    ViewData["Title"] = "ClassList";
+    Layout = "~/Areas/Admin/Views/AdminDefault/Index.cshtml";
+    int count = 0;
+}
+
+<div class="card-header">
+    <div class="card-title">Sınıflar</div>
+</div>
+<div class="card-body">
+    <div class="card-sub">
+        Sınıflar ilgili işlemleri buradan yapabilirsiniz.
+
+
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Başlık</th>
+                <th scope="col">Açıklama</th>
+                <th scope="col">Resim</th>
+                <th scope="col">Fiyat</th>
+                <th scope="col">Öğrenci Sayısı</th>
+                <th scope="col">Ders Sayısı</th>
+                <th scope="col">Ders Saati</th>
+                <th scope="col">Sil</th>
+                <th scope="col">Güncelle</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach(var item in Model)
+            {
+                count++;
+                <tr>
+                <td>@count</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td><img src="@item.ImgUrl" style="width:75px; height:75px;" alt="Resim" /></td>
+                <td>@item.Price</td>
+                <td>@item.StudentCount</td>
+                <td>@item.LessonCount</td>
+                <td>@item.ClassTime</td>
+                    <td><a onclick="deleteClass(@item.ClassId)" class="btn btn-warning">Sil</a></td>
+                    <td><a href="/Admin/Class/UpdateClass/@item.ClassId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Admin/Class/CreateClass/" class="btn btn-primary">Yeni Sınıf Girişi</a>
+    <script>
+        function deleteClass(id) {
+            Swal.fire({
+                title: "Silmek istediğine emin misiniz?",
+                text: "Bu işlemi geri alamazsınız!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Evet, Sil!",
+                cancelButtonText:"İptal"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/Admin/Class/DeleteClass/" + id;
+                }
+            });
+
+        }
+    </script>
+</div>
+

@@ -1,0 +1,32 @@
+﻿@model Class
+@{
+    ViewData["Title"] = "UpdateClass";
+    Layout = "~/Areas/Admin/Views/AdminDefault/Index.cshtml";
+}
+
+<h1>Sınıf Güncelleme</h1>
+<form method="post">
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <textarea rows="4" asp-for="Description" class="form-control"></textarea>
+    <br />
+    <label>Resim</label>
+    <input type="text" asp-for="ImgUrl" class="form-control" />
+    <br />
+    <label>Fiyat</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+    <label>Öğrenci Sayısı</label>
+    <input type="text" asp-for="StudentCount" class="form-control" />
+    <br />
+    <label>Ders Sayısı</label>
+    <input type="text" asp-for="LessonCount" class="form-control" />
+    <br />
+    <label>Ders Saati</label>
+    <input type="text" asp-for="ClassTime" class="form-control" />
+    <br />
+    <button class="btn btn-danger">Güncelle</button>
+</form>
+

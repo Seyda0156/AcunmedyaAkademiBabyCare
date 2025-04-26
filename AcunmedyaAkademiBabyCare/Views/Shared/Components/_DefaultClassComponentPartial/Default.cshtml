@@ -1,0 +1,58 @@
+﻿@model List<AcunmedyaAkademiBabyCare.Entities.Class>
+@{
+    var teachers = (List<AcunmedyaAkademiBabyCare.Entities.Team>)ViewBag.Teachers;
+}
+
+<div class="container-fluid program  py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
+            <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Sınıflarımız</h4>
+            <h1 class="mb-5 display-3">Minik Kalpler İçin Özel ve Renkli Bir Eğitim Dünyası!</h1>
+        </div>
+
+        <div class="row g-5 justify-content-center">
+    @foreach (var item in Model)
+    {
+        var teacher = teachers.FirstOrDefault(x => x.TeamId == item.TeamId); // Eşleştirme
+
+        <div class="col-md-6 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
+            <div class="program-item rounded">
+                <div class="program-img position-relative">
+                    <div class="overflow-hidden img-border-radius">
+                        <img src="@item.ImgUrl" class="img-fluid w-100" alt="Image" style="object-fit: cover; height: 200px;">
+                    </div>
+                    <div class="px-3 py-2 bg-primary text-white program-rate">@item.Price TL</div>
+                </div>
+                <div class="program-text bg-white px-4 pb-3">
+                    <div class="program-text-inner">
+                        <a href="#" class="h4 d-block text-dark">@item.Title</a>
+                        <p class="mt-3 mb-0 text-muted">@item.Description</p>
+                    </div>
+
+                    @if (teacher != null)
+                    {
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="@teacher.ImgUrl" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;" alt="Öğretmen">
+                            <small class="text-muted">@teacher.NameSurname</small>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="path_to_default_image.jpg" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;" alt="Öğretmen">
+                            <small class="text-muted">Öğretmen Bilgisi Yok</small>
+                        </div>
+                    }
+                </div>
+                <div class="d-flex justify-content-between px-4 py-2 bg-primary rounded-bottom">
+                    <small class="text-white"><i class="fas fa-wheelchair me-1"></i>@item.LessonCount</small>
+                    <small class="text-white"><i class="fas fa-book me-1"></i>@item.LessonCount</small>
+                    <small class="text-white"><i class="fas fa-clock me-1"></i>@item.ClassTime</small>
+                </div>
+            </div>
+        </div>
+    }
+        </div>
+    </div>
+</div>
+
