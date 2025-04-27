@@ -43,6 +43,8 @@ CRUD işlemlerine sahip olan admin paneli ile 👩‍🏫 öğretmen kadrosu, �
 ![Ekran görüntüsü 2025-04-27 022525](https://github.com/user-attachments/assets/698e2646-0f7d-4687-9c95-493533201348)
 ![Ekran görüntüsü 2025-04-27 022602](https://github.com/user-attachments/assets/ee03effa-6bad-48c6-9613-afc9a5192739)
 ![Ekran görüntüsü 2025-04-27 022628](https://github.com/user-attachments/assets/77912f1c-1817-45f9-9b7c-136cfb19e24a)
+![Ekran görüntüsü 2025-04-27 141901](https://github.com/user-attachments/assets/03484fa7-aa51-447b-b73a-f4daef8c1c79)
+![Ekran görüntüsü 2025-04-27 141927](https://github.com/user-attachments/assets/1f0631ac-d7dc-4db1-9472-785926bb3ece)
 
 
 
