@@ -11,7 +11,7 @@ CRUD işlemlerine sahip olan admin paneli ile 👩‍🏫 öğretmen kadrosu, �
 # **🛠️ Kullanılan Teknolojiler ve Uygulamalar**
 🖥️ ASP.NET Core Framework
 
-🛢️ Entity Framework (ORM) 8.0
+🛢️ Entity Framework Core 6.0 (ORM) 
 
 🧩 Code First Yaklaşımı
 
